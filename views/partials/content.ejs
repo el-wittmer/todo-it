@@ -1,0 +1,19 @@
+<div class="title">
+    <div class="title-box" style="border-bottom: 2px solid #AA4A44;">
+        <h1><%= weekday %>, <%=month%> <%=day%></h1>
+    </div>
+    <div class="title-box">
+        <h2><% if (locals.taskType) { %><%=taskType%> Tasks<%}%></h2>
+    </div>
+</div>
+<div class="list-outline">
+    <% if (locals.displayItems) {%>
+        <% for (let i = 0; i < displayItems.length; i++) {%>
+            <div class="list-item">
+                <input type="checkbox">
+                <label>
+                <p class="todo-text"><%=displayItems[i]%></p>
+                </label>
+        </div>
+        <% } %>
+    <% }%>
