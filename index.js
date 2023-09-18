@@ -21,6 +21,7 @@ const date = new Date();
 const tasksToday = [];
 const tasksWork = [];
 
+// TODAY'S TASKS
 app.get("/", (req, res) => {
     res.render("index.ejs", {weekday: getWeekday(date.getDay()), month: getMonth(date.getMonth()), day: date.getDate(), displayItems: tasksToday, taskType: "Today's"});
   });
@@ -35,6 +36,7 @@ app.post("/submit", (req, res) => {
     }
 });
 
+// WORK TASKS
 app.get("/work", (req, res) => {
     res.render("work.ejs", {weekday: getWeekday(date.getDay()), month: getMonth(date.getMonth()), day: date.getDate(), displayItems: tasksWork, taskType: "Work"});
   });

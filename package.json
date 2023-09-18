@@ -1,7 +1,7 @@
 {
-  "name": "capstone3",
+  "name": "todo-it",
   "version": "1.0.0",
-  "description": "",
+  "description": "Two todo-lists which run in the browser using HTML methods",
   "main": "index.js",
   "type": "module",
   "scripts": {
