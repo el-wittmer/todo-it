@@ -1,0 +1,22 @@
+<div class="title">
+    <div class="title-box" style="border-bottom: 2px solid #AA4A44;">
+        <h1><%= displayDate %></h1>
+    </div>
+    <div class="title-box">
+        <h2><% if (locals.listTitle) { %><%=listTitle%> Tasks<%}%></h2>
+    </div>
+</div>
+<div class="list-outline">
+    <% if (locals.newListItems) {%>
+        <% newListItems.forEach(function(item){%>
+            <form action="/delete" method="post">
+                <div class="list-item">
+                    <input type="checkbox" name="checkbox" value="<%=item._id%>" onChange="this.form.submit()"></input>
+                    <label>
+                    <p class="todo-text"><%=item.name%></p>
+                    </label>
+                </div>
+                <input type="hidden" name="listName" value="<%=listTitle%>"></input>
+            </form>
+        <% }) %>
+    <% } %>
